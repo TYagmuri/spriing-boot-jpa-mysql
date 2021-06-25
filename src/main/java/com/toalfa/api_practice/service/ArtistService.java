@@ -29,6 +29,10 @@ public class ArtistService {
         return repository.getById(id);
     }
 
+    public Artist getArtistByUsername(String username) {
+        return repository.findArtistByUsername(username);
+    }
+
     public String deleteArtistByID(int id) {
         repository.deleteById(id);
         return "Artist with 'ID: " + id + "' deleted successfully.";
