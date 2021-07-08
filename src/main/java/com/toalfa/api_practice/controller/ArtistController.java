@@ -1,8 +1,16 @@
 package com.toalfa.api_practice.controller;
 
 import com.toalfa.api_practice.entity.Artist;
+import com.toalfa.api_practice.entity.AuthRequest;
+import com.toalfa.api_practice.entity.AuthResponse;
+//import com.toalfa.api_practice.service.ArtistDetailsService;
 import com.toalfa.api_practice.service.ArtistService;
+//import com.toalfa.api_practice.util.JwtUtil;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.authentication.BadCredentialsException;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -11,8 +19,12 @@ import java.util.List;
 @RequestMapping("/api")
 public class ArtistController {
 
+    private final ArtistService service;
+
     @Autowired
-    private ArtistService service;
+    public ArtistController(ArtistService service) {
+        this.service = service;
+    }
 
     @PostMapping("/addArtist")
     public Artist addArtist(@RequestBody Artist artist) {
@@ -32,6 +44,11 @@ public class ArtistController {
     @GetMapping("/getArtistByID/{id}")
     public Artist findArtist(@PathVariable int id) {
         return service.getArtistByID(id);
+    }
+
+    @GetMapping("/getArtistByUsername/{username}")
+    public Artist findArtistByUsername(@PathVariable String username) {
+        return service.getArtistByUsername(username);
     }
 
     @PutMapping("/updateArtist")

@@ -30,7 +30,7 @@ public class ArtistService {
     }
 
     public Artist getArtistByUsername(String username) {
-        return repository.findArtistByUsername(username);
+        return repository.getArtistByUsername(username);
     }
 
     public String deleteArtistByID(int id) {

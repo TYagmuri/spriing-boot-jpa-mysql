@@ -1,15 +1,14 @@
 package com.toalfa.api_practice.entity;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
-@Data
 @AllArgsConstructor
 @NoArgsConstructor
+@Setter
+@Getter
 public class AuthRequest {
 
-    private String userName;
+    private String username;
     private String password;
 
 }

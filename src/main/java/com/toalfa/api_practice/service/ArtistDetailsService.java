@@ -1,7 +1,5 @@
 package com.toalfa.api_practice.service;
 
-import com.toalfa.api_practice.entity.Artist;
-import com.toalfa.api_practice.repository.ArtistRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -14,8 +12,12 @@ import java.util.ArrayList;
 @Service
 public class ArtistDetailsService implements UserDetailsService {
 
+    private final ArtistService service;
+
     @Autowired
-    private ArtistService service;
+    public ArtistDetailsService(ArtistService artistService) {
+        this.service = artistService;
+    }
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
