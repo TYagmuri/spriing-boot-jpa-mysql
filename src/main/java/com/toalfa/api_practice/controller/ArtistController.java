@@ -1,16 +1,8 @@
 package com.toalfa.api_practice.controller;
 
 import com.toalfa.api_practice.entity.Artist;
-import com.toalfa.api_practice.entity.AuthRequest;
-import com.toalfa.api_practice.entity.AuthResponse;
-//import com.toalfa.api_practice.service.ArtistDetailsService;
 import com.toalfa.api_practice.service.ArtistService;
-//import com.toalfa.api_practice.util.JwtUtil;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.authentication.AuthenticationManager;
-import org.springframework.security.authentication.BadCredentialsException;
-import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
-import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -57,7 +49,7 @@ public class ArtistController {
     }
 
     @DeleteMapping("/deleteArtistByID/{id}")
-    public String deleteArtist(@PathVariable int id) {
+    public String deleteArtist(@PathVariable Integer id) {
         return service.deleteArtistByID(id);
     }
 

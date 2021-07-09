@@ -1,13 +1,18 @@
 package com.toalfa.api_practice;
 
-import org.junit.jupiter.api.Test;
-import org.springframework.boot.test.context.SpringBootTest;
+import com.toalfa.api_practice.entity.Artist;
 
-@SpringBootTest
 class ApiPracticeApplicationTests {
 
-    @Test
-    void contextLoads() {
+    public static void main(String[] args) {
+        Artist artist = new Artist(
+                "",
+                "",
+                "",
+                "",
+                "",
+                20,
+                ""
+        );
     }
-
 }

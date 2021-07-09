@@ -11,11 +11,10 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.function.Function;
-
 @Service
 public class JwtUtil {
 
-    @Value("${jwt.secret}")
+    @Value("${jwt.secretKey}")
     private String secretKey;
 
     public String extractUsername(String token) {

@@ -16,7 +16,7 @@ public class Artist {
     @Column(nullable = false, updatable = false)
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Integer id;
 
     @NonNull
     @Column(unique = true)

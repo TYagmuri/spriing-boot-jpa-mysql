@@ -25,8 +25,8 @@ public class ArtistService {
         return repository.findAll();
     }
 
-    public Artist getArtistByID(int id) {
-        return repository.getById(id);
+    public Artist getArtistByID(Integer id) {
+        return repository.getArtistById(id);
     }
 
     public Artist getArtistByUsername(String username) {
